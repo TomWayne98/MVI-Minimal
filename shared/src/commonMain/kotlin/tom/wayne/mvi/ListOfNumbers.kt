@@ -6,6 +6,7 @@ import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
 import com.arkivanov.mvikotlin.extensions.coroutines.states
+import com.arkivanov.mvikotlin.logging.store.LoggingStoreFactory
 import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -16,7 +17,7 @@ import kotlin.random.Random
 class NumbersViewModel {
 
     // Store který obsahuje téma zobrazené na obrazovce ať už to jsou Čísla jako zde, MyBets, Ticket detail nebo cokoliv.
-    private val store: NumbersStore = NumbersStoreFactory(DefaultStoreFactory()).create()
+    private val store: NumbersStore = NumbersStoreFactory(LoggingStoreFactory(DefaultStoreFactory())).create()
 
     // Obsahuje všechny data k vykreslení na obrazovku.
     val state: Flow<NumbersStore.NumberState> = store.state()

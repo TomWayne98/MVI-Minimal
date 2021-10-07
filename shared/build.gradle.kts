@@ -35,6 +35,7 @@ kotlin {
                 api ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
                 implementation ("com.arkivanov.mvikotlin:mvikotlin:$mviVersion")
                 implementation ("com.arkivanov.mvikotlin:mvikotlin-main:$mviVersion")
+                implementation ("com.arkivanov.mvikotlin:mvikotlin-logging:$mviVersion")
                 implementation ("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:$mviVersion")
             }
         }

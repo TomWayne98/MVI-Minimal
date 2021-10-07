@@ -122,6 +122,7 @@ internal class NumbersStoreFactory(private val storeFactory: StoreFactory) {
 
     // Je zodpovědný za update State
     // Veme předešlý stav a vrátí nový upravený stav
+    // Vše v Reduceru probíhá na main threadu
     private object ReducerImpl : Reducer<NumbersStore.NumberState, NumbersResult> {
         override fun NumbersStore.NumberState.reduce(result: NumbersResult): NumbersStore.NumberState =
             when (result) {
